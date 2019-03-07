@@ -1,0 +1,86 @@
+<body>
+
+
+<form (ngSubmit)="addUser()"  style="border:1px solid #ccc">
+  <div class="container_SignUp">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" [(ngModel)]="form.name" required>
+    <div class="alert alert-danger" [hidden]="!error.name" >
+      {{error.name}}
+    </div>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" [(ngModel)]="form.email" required>
+    <div class="alert alert-danger" [hidden]="!error.email" >
+      {{error.email}}
+    </div>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="form.password" required>
+
+
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" [(ngModel)]="form.rePassword" required>
+    <div class="alert alert-danger "  [hidden]="!error.rePassword" >
+      {{error.rePassword}}
+    </div>
+
+      <button type="submit" class="signupbtn">Sign Up</button>
+
+  </div>
+</form>
+
+
+</body>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a href="https://www.facebook.com/"  target="_blank" class="btn-floating btn-fb mx-3 btn-lg" >
+          <mdb-icon fab icon="facebook"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.twitter.com/"  target="_blank" class="btn-floating btn-tw mx-3 btn-lg" >
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a  href="https://plus.google.com/"  target="_blank" class="btn-floating btn-gplus mx-3 btn-lg" >
+          <mdb-icon fab fab icon="google-plus"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/"  target="_blank" class="btn-floating btn-li mx-3 btn-lg" >
+          <mdb-icon fab icon="linkedin"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://dribbble.com/"  target="_blank" class="btn-floating btn-dribbble mx-3 btn-lg" >
+          <mdb-icon fab icon="dribbble"></mdb-icon>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> ToolsRental.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

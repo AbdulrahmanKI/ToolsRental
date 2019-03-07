@@ -1,0 +1,77 @@
+<body>
+
+<form #loginForm=ngForm  (ngSubmit)="getUser()">
+
+
+  <div class="alert alert-danger" [hidden]="!error" >
+    {{error}}
+  </div>
+
+  <label for="email" class="col-sm-2 col-form-label"><b>Email</b></label>
+  <input type="email" placeholder="Enter Email" class="form-control" name="email" [(ngModel)]="form.email" required>
+
+  <label for="psw" class="col-sm-2 col-form-label"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" class="form-control" name="password" [(ngModel)]="form.password" required>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+
+  <p>Not a member?
+    <a routerLink="/signup">Register</a>
+  </p>
+
+
+</form>
+
+
+</body>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a href="https://www.facebook.com/"  target="_blank" class="btn-floating btn-fb mx-3 btn-lg" >
+          <mdb-icon fab icon="facebook"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.twitter.com/"  target="_blank" class="btn-floating btn-tw mx-3 btn-lg" >
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a  href="https://plus.google.com/"  target="_blank" class="btn-floating btn-gplus mx-3 btn-lg" >
+          <mdb-icon fab fab icon="google-plus"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/"  target="_blank" class="btn-floating btn-li mx-3 btn-lg" >
+          <mdb-icon fab icon="linkedin"></mdb-icon>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://dribbble.com/"  target="_blank" class="btn-floating btn-dribbble mx-3 btn-lg" >
+          <mdb-icon fab icon="dribbble"></mdb-icon>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> ToolsRental.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+

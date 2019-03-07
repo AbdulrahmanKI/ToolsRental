@@ -1,0 +1,16 @@
+
+<header id="header">
+    <div class="inner">
+        <a href="#" class="logo">ToolsRental</a>
+        <nav id="nav">
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+            <a routerLink="/about">About</a>
+            <a routerLink="/contact">Contact us</a>
+            <a class="login" routerLink="signin" *ngIf="!loggedIn">login</a>
+            <a class="login" routerLink="profile" *ngIf="loggedIn">{{username?.name}}</a>
+            <a class="login" href="#" (click)="logout1($event)" *ngIf="loggedIn">logout</a>
+        </nav>
+    </div>
+</header>
+
+

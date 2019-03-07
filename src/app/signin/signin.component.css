@@ -1,0 +1,52 @@
+body {
+
+    height: 67.6vh;
+    background-color: #ddd1d4;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+
+    background-color: green;
+    border-color: #ebfffc;
+    margin: 25px 0 10px 40%;
+      padding: 10px 15px 10px 15px;
+}
+
+p{
+   margin: 25px 0  30px 30%;
+}
+
+/* Clear floats */
+/*.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}*/
+
+
+form{
+   margin: 0 35% 0 35%;
+   padding-top: 25px;
+
+}
+
+
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+
+@media screen and (max-width: 300px) {
+    .signupbtn {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+

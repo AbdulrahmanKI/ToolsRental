@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {TokenService} from "./token.service";
-import {Observable} from "rxjs";
-import {USERDATA} from "../User";
-import {RequestOptions} from "@angular/http";
+import {Observable, throwError} from "rxjs";
+
+import {catchError} from "rxjs/operators";
+
 
 
 
@@ -35,6 +36,32 @@ export class AuthService {
     };
 
     return this.http.get(`${this.url}/me`, httpOptions );
+  }
+
+
+  postFile(fileToUpload: File) {
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token.get()}`
+      })
+    };
+
+    console.log(fileToUpload.name);
+
+    // const endpoint = `${this.url}/addimage`;
+    const formData: FormData = new FormData();
+    formData.append('image', fileToUpload, fileToUpload.name);
+    return this.http.post(`${this.url}/addimage`,formData , httpOption );
+  }
+
+  getFile(){
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token.get()}`
+      })
+    };
+    return this.http.get(`${this.url}/show` , httpOption );
+
   }
 
 }

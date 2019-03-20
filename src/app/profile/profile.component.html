@@ -1,5 +1,17 @@
-<body>
 
-<button (click)="handleResponse()"> click me</button>
+<form >
+
+
+<label for="avatar">Choose a Tool picture:</label>
+
+<input type="file"  id="avatar" name="avatar" (change)="onClick($event)">
+
+<button mdbBtn type="button" color="primary" mdbWavesEffect (click)="uploadFileToActivity()">upload</button>
+</form>
+
+<body>
+    <div class="md">
+        <p> the name is :{{name?.path}}</p>
+    </div>
 
 </body>

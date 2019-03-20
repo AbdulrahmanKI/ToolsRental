@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../Services/auth.service";
 import {TokenService} from "../Services/token.service";
+import {first} from "rxjs/operators";
 
 
 @Component({
@@ -10,27 +11,48 @@ import {TokenService} from "../Services/token.service";
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private auth : AuthService,
-              private token : TokenService) { }
+  constructor(private auth : AuthService) { }
 
 
-
+  fileToUpload: File = null;
   public name;
-  public data = `Bearer ${this.token.get()}`;
 
 
 
   ngOnInit() {
-    console.log(this.data);
+
+    this.getPhoto();
     this.auth.fetch_data().subscribe(
-        data =>this.name = data);
-  }
-
-  handleResponse() {
-     this.auth.fetch_data().subscribe(
-        data =>console.log(data));
+        data => console.log(data),
+        error => console.log(error)
+    );
 
   }
+    handleFileInput(files: FileList) {
+        this.fileToUpload = files.item(0);
+    }
+
+    uploadFileToActivity() {
+        this.auth.postFile(this.fileToUpload).subscribe(
+            data => console.log(data),
+            error => console.log(error));
+
+    }
+
+    onClick(event){
+      this.fileToUpload = <File>event.target.files[0];
+      //console.log(this.fileToUpload);
+    }
+
+    getPhoto(){
+      this.auth.getFile().subscribe(
+          data => console.log(data[0].path,data[0].name) ,
+          error =>console.log(error),
+      )
+    }
+
+
+
 
 
 

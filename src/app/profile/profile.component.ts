@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private auth : AuthService) { }
 
-
+  public photoUrl;
   fileToUpload: File = null;
   public name;
 
@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     this.getPhoto();
+
     this.auth.fetch_data().subscribe(
         data => console.log(data),
         error => console.log(error)
@@ -46,7 +47,7 @@ export class ProfileComponent implements OnInit {
 
     getPhoto(){
       this.auth.getFile().subscribe(
-          data => console.log(data[0].path,data[0].name) ,
+          data => this.photoUrl = data ,
           error =>console.log(error),
       )
     }

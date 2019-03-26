@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../Services/auth.service";
 import {TokenService} from "../Services/token.service";
-import {first} from "rxjs/operators";
+import {count, first} from "rxjs/operators";
 import {Router} from "@angular/router";
 
 
@@ -21,13 +21,10 @@ export class ProfileComponent implements OnInit {
   };
   public name;
 
-  public colors = ["red","yellow","gray","black"];
-
+  public color = ["red","black"];
 
   ngOnInit() {
-
     this.getPhoto();
-
     this.auth.fetch_data().subscribe(
         data => console.log(data),
         error => console.log(error)
@@ -43,8 +40,6 @@ export class ProfileComponent implements OnInit {
         this.auth.postFile(this.form).subscribe(
             data => console.log(data),
             error => console.log(error));
-      location.reload();
-
     }
 
     onClick(event){
@@ -58,6 +53,8 @@ export class ProfileComponent implements OnInit {
           error =>console.log(error),
       )
     }
+
+    
 
 
 

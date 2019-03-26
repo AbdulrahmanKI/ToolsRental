@@ -18,13 +18,13 @@
 <hr>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" id="conta">
         <div class="row align-items-start">
-            <div class="col" *ngFor="let color of photoUrl;index as i">
-                <mdb-card>
+            <div class="col" *ngFor="let photos of photoUrl;index as i" id="child">
+                <mdb-card style="width: 300px">
                     <div class="view overlay waves-light"  mdbWavesEffect>
                         <!-- Card img -->
-                        <img style="height: 250px; width: 100%" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['name']}}"  alt="Card image cap">
+                        <img style="height: 250px; width: 300px" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['name']}}"  alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"  ></div>
                         </a>
@@ -35,13 +35,15 @@
                         <mdb-card-title>
                             <h4>{{photoUrl[i]['title']}}</h4>
                         </mdb-card-title>
-
-                        <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+                        <a href="#" mdbBtn color="red" mdbWavesEffect>remove</a>
                     </mdb-card-body>
                 </mdb-card>
             </div>
 
         </div>
-
     </div>
+
+
+
+
 </body>

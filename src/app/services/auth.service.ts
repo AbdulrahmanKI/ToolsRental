@@ -39,18 +39,19 @@ export class AuthService {
   }
 
 
-  postFile(fileToUpload: File) {
+  postFile(file) {
     const httpOption = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token.get()}`
       })
     };
 
-    console.log(fileToUpload.name);
+    console.log(file.fileToUpload.name);
 
     // const endpoint = `${this.url}/addimage`;
     const formData: FormData = new FormData();
-    formData.append('image', fileToUpload, fileToUpload.name);
+    formData.append('image', file.fileToUpload, file.fileToUpload.name);
+    formData.append('fileTitle', file.fileTitle);
     return this.http.post(`${this.url}/addimage`,formData , httpOption );
   }
 

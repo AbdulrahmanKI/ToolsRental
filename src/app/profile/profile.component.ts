@@ -21,7 +21,9 @@ export class ProfileComponent implements OnInit {
   };
   public name;
 
-  public color = ["red","black"];
+
+   public photoName = 'asd';
+
 
   ngOnInit() {
     this.getPhoto();
@@ -40,12 +42,14 @@ export class ProfileComponent implements OnInit {
         this.auth.postFile(this.form).subscribe(
             data => console.log(data),
             error => console.log(error));
+        this.getPhoto();
     }
 
     onClick(event){
       this.form.fileToUpload = <File>event.target.files[0];
       //console.log(this.fileToUpload);
     }
+
 
     getPhoto(){
       this.auth.getFile().subscribe(
@@ -54,7 +58,16 @@ export class ProfileComponent implements OnInit {
       )
     }
 
-    
+    removePhoto(data){
+      this.photoName = data;
+      console.log(this.photoName);
+       this.auth.deletePhoto(this.photoName).subscribe(
+        data => console.log(data),
+        error => console.log(error)
+        );
+      this.getPhoto();
+    }
+
 
 
 

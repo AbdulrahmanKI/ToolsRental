@@ -18,7 +18,8 @@
 <hr>
 
 <body>
-    <div class="container-fluid" id="conta">
+
+    <div class="container-fluid">
         <div class="row align-items-start">
             <div class="col" *ngFor="let photos of photoUrl;index as i" id="child">
                 <mdb-card style="width: 300px">
@@ -35,15 +36,12 @@
                         <mdb-card-title>
                             <h4>{{photoUrl[i]['title']}}</h4>
                         </mdb-card-title>
-                        <a href="#" mdbBtn color="red" mdbWavesEffect>remove</a>
+                        <a (click)="removePhoto(photoUrl[i]['name'])"  mdbBtn color="red" mdbWavesEffect>remove</a>
                     </mdb-card-body>
                 </mdb-card>
             </div>
 
         </div>
     </div>
-
-
-
 
 </body>

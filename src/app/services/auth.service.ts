@@ -65,4 +65,23 @@ export class AuthService {
 
   }
 
+
+  deletePhoto(data){
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token.get()}`
+      })
+    };
+
+    return this.http.post(`${this.url}/delete`,data,httpOption);
+  }
+
+  showAll(){
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token.get()}`
+      })
+    };
+    return this.http.get(`${this.url}/showAll` , httpOption );
+  }
 }

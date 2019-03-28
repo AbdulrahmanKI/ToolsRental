@@ -1,6 +1,30 @@
 
+<body>
 
-<div >
-   <button (click)="onClick()">Click me!</button>
+<div class="container-fluid">
+   <div class="row align-items-start">
+      <div class="col" *ngFor="let photos of photoUrl;index as i" id="child">
+         <mdb-card style="width: 300px">
+            <div class="view overlay waves-light"  mdbWavesEffect>
+               <!-- Card img -->
+               <img style="height: 250px; width: 300px" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['name']}}"  alt="Card image cap">
+               <a>
+                  <div class="mask rgba-white-slight"  ></div>
+               </a>
+            </div>
+            <!--Card content-->
+            <mdb-card-body>
+               <!--Title-->
+               <mdb-card-title>
+                  <h4>{{photoUrl[i]['title']}}</h4>
+               </mdb-card-title>
+               <a (click)="removePhoto(photoUrl[i]['name'])"  mdbBtn color="primary" mdbWavesEffect>Rent</a>
+            </mdb-card-body>
+         </mdb-card>
+      </div>
+
+   </div>
 </div>
+
+</body>
 

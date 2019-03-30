@@ -1,0 +1,10 @@
+#mid{
+    width: 400px;
+    margin: 15px 0 15px 26.5%;
+    border-style: groove;
+    border-color: #dbdbdb;
+    padding: 3px;
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: rgb(237, 237, 237);
+}

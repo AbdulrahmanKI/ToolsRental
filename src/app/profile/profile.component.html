@@ -25,7 +25,7 @@
                 <mdb-card style="width: 300px">
                     <div class="view overlay waves-light"  mdbWavesEffect>
                         <!-- Card img -->
-                        <img style="height: 250px; width: 300px" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['name']}}"  alt="Card image cap">
+                        <img style="height: 250px; width: 300px" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['ph_name']}}"  alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"  ></div>
                         </a>
@@ -36,7 +36,7 @@
                         <mdb-card-title>
                             <h4>{{photoUrl[i]['title']}}</h4>
                         </mdb-card-title>
-                        <a (click)="removePhoto(photoUrl[i]['name'])"  mdbBtn color="red" mdbWavesEffect>remove</a>
+                        <a (click)="removePhoto(photoUrl[i]['ph_name'])"  mdbBtn color="red" mdbWavesEffect>remove</a>
                     </mdb-card-body>
                 </mdb-card>
             </div>

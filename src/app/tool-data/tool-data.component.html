@@ -1,0 +1,45 @@
+
+<body>
+
+
+<div class="container-fluid" style="width: 450px;margin: 15px 0 15px 25%">
+      <mdb-card >
+        <div class="view overlay waves-light"  mdbWavesEffect>
+          <!-- Card img -->
+          <img style="height: 250px; width: 450px" src="http://127.0.0.1:8000/upload/{{photoUrl[id]['ph_name']}}"  alt="Card image cap">
+          <a>
+            <div class="mask rgba-white-slight"  ></div>
+          </a>
+        </div>
+        <!--Card content-->
+        <mdb-card-body>
+          <!--Title-->
+          <mdb-card-title>
+            <h4>{{photoUrl[id]['title']}}</h4>
+            <h6 style="color: darkmagenta">{{'by: '+photoUrl[id]['name']}}</h6>
+          </mdb-card-title>
+          <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          <a (click)="getRent()" mdbBtn color="primary" mdbWavesEffect>Credit Card</a>
+          <a (click)="getToolData()" style="float: right"  mdbBtn color="success" mdbWavesEffect>Cash on Delivery</a>
+        </mdb-card-body>
+      </mdb-card>
+      <div>
+        <textarea #comment  style="margin-top: 15px;width: 400px" placeholder="write a comment.."></textarea>
+        <button (click)="addComment(comment.value)"  mdbBtn type="button" color="elegant" mdbWavesEffect>Submit</button>
+      </div>
+    </div>
+
+<hr>
+
+<div class="media" id="mid" *ngFor="let photos of photoUrl;index as i" >
+  <div class="media-body">
+    <h5 class="mt-0 font-weight-bold" style="color: #0040ff;font-size: 22px">Media heading</h5>
+    <hr style="margin: -5px 0 0px 0">
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+    vulputate at, tempus viverra turpis.
+  </div>
+</div>
+
+
+</body>
+

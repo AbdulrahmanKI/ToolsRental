@@ -18,6 +18,7 @@ export class AuthService {
       private http:HttpClient,
       private token:TokenService) { }
 
+  public message;
   private url = 'http://localhost:8000/api/auth';
 
   login(data){
@@ -84,4 +85,16 @@ export class AuthService {
     };
     return this.http.get(`${this.url}/showAll` , httpOption );
   }
+
+  search(data){
+    const httpOption = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token.get()}`
+      })
+    };
+    return this.http.post(`${this.url}/search` ,data, httpOption );
+  }
+
+
 }
+

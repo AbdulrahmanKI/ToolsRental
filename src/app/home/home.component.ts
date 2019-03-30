@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../Services/auth.service";
 import {TokenService} from "../Services/token.service";
@@ -10,13 +10,22 @@ import {TokenService} from "../Services/token.service";
 })
 export class HomeComponent implements OnInit {
 
+
   constructor(private auth:AuthService,
-              private token:TokenService) { }
+              private token:TokenService,
+              private route:Router) { }
 
   public photoUrl;
 
+
+
+
+  public form = {searchName : null};
+
   ngOnInit() {
     this.getPhoto();
+
+
   }
 
   getPhoto(){
@@ -27,7 +36,26 @@ export class HomeComponent implements OnInit {
   }
 
   getRent(){
-
+    if (!this.token.loggedIn()){
+      this.route.navigateByUrl('/signin');
+      return;
+    }
+    console.log('asd');
+    //this method is not completed
 
   }
+
+  //retrieve all tools user searched
+  getSearch(){
+    this.auth.search(this.form.searchName).subscribe(
+        data=> this.photoUrl = data,
+        error=>console.log(error)
+    );
+  }
+
+  getToolData(data){
+    this.auth.message = data;
+    this.route.navigateByUrl('/tooldata')
+  }
+
 }

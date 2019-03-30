@@ -46,7 +46,7 @@ export class SigninComponent implements OnInit {
     handleResponse(data){
         this.token.handle(data.access_token);
         this.logout.changeAuthState(true);
-        this.router.navigateByUrl('/profile');
+        this.router.navigateByUrl('/home');
         console.log(this.token.loggedIn());
         console.log(data.user);
        // this.newMessage();

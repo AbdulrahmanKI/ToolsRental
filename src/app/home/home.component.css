@@ -1,3 +1,12 @@
-body{
-    margin: 8px;
+form{
+    margin-left: 100px;
+    margin-bottom: -15px;
+}
+
+h4 ,h6{
+    display: inline;
+}
+
+h6{
+    float: right;
 }

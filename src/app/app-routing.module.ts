@@ -7,6 +7,7 @@ import {SigninComponent} from './signin/signin.component';
 import {ProfileComponent} from "./profile/profile.component";
 import {BeforeLoginService} from "./Services/before-login.service";
 import {AfterLoginService} from "./Services/after-login.service";
+import {ToolDataComponent} from "./tool-data/tool-data.component";
 
 
 // @ts-ignore
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'signin' , component: SigninComponent,canActivate: [BeforeLoginService] },
     {path: 'signup', component: SignupComponent , canActivate: [BeforeLoginService]},
     {path: 'profile' , component: ProfileComponent , canActivate: [AfterLoginService] },
+    {path: 'tooldata' , component: ToolDataComponent , canActivate: [AfterLoginService] },
     {path: '**', component: PageNotFoundComponent}
 ];
 

@@ -11,6 +11,8 @@ import {FormsModule} from "@angular/forms";
 import {AlertModule} from "ngx-bootstrap";
 import { ProfileComponent } from './profile/profile.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ToolDataComponent } from './tool-data/tool-data.component';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     HomeComponent,
     SigninComponent,
     ProfileComponent,
+    ToolDataComponent,
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

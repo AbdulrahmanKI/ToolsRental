@@ -1,5 +1,14 @@
 
 <body>
+<!-- Search form -->
+<form (ngSubmit)="getSearch()" class="form-inline md-form form-sm active-purple active-purple-2">
+   <i class="fas fa-search" aria-hidden="true"></i>
+   <input class="form-control form-control-lg ml-3 w-25" type="text" placeholder="Search" aria-label="Search"
+          mdbInput name="searchName" [(ngModel)]="form.searchName">
+   <button mdbBtn type="submit" color="info" rounded="true" mdbWavesEffect>Search</button>
+</form>
+
+<hr style="padding-bottom: 15px">
 
 <div class="container-fluid">
    <div class="row align-items-start">
@@ -7,7 +16,7 @@
          <mdb-card style="width: 300px">
             <div class="view overlay waves-light"  mdbWavesEffect>
                <!-- Card img -->
-               <img style="height: 250px; width: 300px" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['name']}}"  alt="Card image cap">
+               <img style="height: 250px; width: 300px" src="http://127.0.0.1:8000/upload/{{photoUrl[i]['ph_name']}}"  alt="Card image cap">
                <a>
                   <div class="mask rgba-white-slight"  ></div>
                </a>
@@ -16,9 +25,16 @@
             <mdb-card-body>
                <!--Title-->
                <mdb-card-title>
+
                   <h4>{{photoUrl[i]['title']}}</h4>
+                  <h6>10$ per Hour</h6>
+
+                  <h5 style="color: darkmagenta">{{'by: '+photoUrl[i]['name']}}</h5>
+
                </mdb-card-title>
-               <a (click)="removePhoto(photoUrl[i]['name'])"  mdbBtn color="primary" mdbWavesEffect>Rent</a>
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+               <a (click)="getRent()" mdbBtn color="primary" mdbWavesEffect>Rent</a>
+               <a (click)="getToolData(i)" style="float: right"  mdbBtn color="success" mdbWavesEffect>Show</a>
             </mdb-card-body>
          </mdb-card>
       </div>
@@ -27,4 +43,5 @@
 </div>
 
 </body>
+
 

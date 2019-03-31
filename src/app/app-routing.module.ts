@@ -17,7 +17,7 @@ const routes: Routes = [
     {path: 'signin' , component: SigninComponent,canActivate: [BeforeLoginService] },
     {path: 'signup', component: SignupComponent , canActivate: [BeforeLoginService]},
     {path: 'profile' , component: ProfileComponent , canActivate: [AfterLoginService] },
-    {path: 'tooldata' , component: ToolDataComponent , canActivate: [AfterLoginService] },
+    {path: 'tooldata' , component: ToolDataComponent  },
     {path: '**', component: PageNotFoundComponent}
 ];
 

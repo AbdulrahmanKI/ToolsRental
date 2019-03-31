@@ -49,10 +49,10 @@ export class AuthService {
 
     console.log(file.fileToUpload.name);
 
-    // const endpoint = `${this.url}/addimage`;
     const formData: FormData = new FormData();
     formData.append('image', file.fileToUpload, file.fileToUpload.name);
     formData.append('fileTitle', file.fileTitle);
+    formData.append('price',file.price);
     return this.http.post(`${this.url}/addimage`,formData , httpOption );
   }
 
@@ -95,6 +95,36 @@ export class AuthService {
     return this.http.post(`${this.url}/search` ,data, httpOption );
   }
 
+  addComment(data){
+      const httpOption = {
+          headers: new HttpHeaders({
+              'Authorization': `Bearer ${this.token.get()}`
+          })
+      };
+      const formData: FormData = new FormData();
+      formData.append('comment', data[0]);
+      formData.append('id',data[1]);
+      return this.http.post(`${this.url}/comment` ,formData, httpOption );
+  }
 
+  showSpecificPhoto(data){
+      const httpOption = {
+          headers: new HttpHeaders({
+              'Authorization': `Bearer ${this.token.get()}`
+          })
+      };
+
+      return this.http.post(`${this.url}/showSpecificPhoto/${data}` ,data, httpOption );
+  }
+
+  showComment(data){
+      const httpOption = {
+          headers: new HttpHeaders({
+              'Authorization': `Bearer ${this.token.get()}`
+          })
+      };
+
+      return this.http.post(`${this.url}/showComment/${data}` ,data, httpOption );
+  }
 }
 

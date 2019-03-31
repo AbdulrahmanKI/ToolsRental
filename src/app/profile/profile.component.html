@@ -6,11 +6,15 @@
             <label class="col" for = "title">Tools Title</label>
             <input type="text" placeholder="Tool Name" id="title" name="title" [(ngModel)]="form.fileTitle">
         </div>
-        <div class="col-6">
+       <div class="col-2">
+           <label class="col" for = "price">Price Per Hour</label>
+           <input type="text" placeholder="Tool price" id="price" name="price" [(ngModel)]="form.price">
+       </div>
+        <div class="col-5">
             <label for="avatar">Choose a Tool picture:</label>
             <input type="file"  id="avatar" name="avatar" (change)="onClick($event)" [(ngModel)]="form.fileToUpload" >
         </div>
-        <button mdbBtn type="submit" color="primary" mdbWavesEffect >upload</button>
+        <button mdbBtn class="lg-5" type="submit" color="primary" mdbWavesEffect >upload</button>
      </div>
 
 </form>

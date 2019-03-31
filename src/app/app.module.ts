@@ -12,6 +12,7 @@ import {AlertModule} from "ngx-bootstrap";
 import { ProfileComponent } from './profile/profile.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ToolDataComponent } from './tool-data/tool-data.component';
+import {photoID} from "./User";
 
 
 

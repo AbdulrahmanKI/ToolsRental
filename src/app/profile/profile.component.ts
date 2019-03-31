@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   public form = {
     fileToUpload: File = null,
     fileTitle : null,
-    price:null
+    price : null
   };
   public name;
 

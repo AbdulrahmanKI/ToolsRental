@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getPhoto();
-
-
   }
 
   getPhoto(){
@@ -41,8 +39,7 @@ export class HomeComponent implements OnInit {
       this.route.navigateByUrl('/signin');
       return;
     }
-    console.log('asd');
-    //this method is not completed
+    this.route.navigateByUrl('/rent');
 
   }
 

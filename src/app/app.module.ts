@@ -13,6 +13,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ToolDataComponent } from './tool-data/tool-data.component';
 import {photoID} from "./User";
+import { RentComponent } from './rent/rent.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -26,6 +29,9 @@ import {photoID} from "./User";
     SigninComponent,
     ProfileComponent,
     ToolDataComponent,
+    RentComponent,
+    AboutUsComponent,
+    ContactComponent,
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

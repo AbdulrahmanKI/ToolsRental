@@ -8,6 +8,9 @@ import {ProfileComponent} from "./profile/profile.component";
 import {BeforeLoginService} from "./Services/before-login.service";
 import {AfterLoginService} from "./Services/after-login.service";
 import {ToolDataComponent} from "./tool-data/tool-data.component";
+import {RentComponent} from "./rent/rent.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
+import {ContactComponent} from "./contact/contact.component";
 
 
 // @ts-ignore
@@ -18,6 +21,9 @@ const routes: Routes = [
     {path: 'signup', component: SignupComponent , canActivate: [BeforeLoginService]},
     {path: 'profile' , component: ProfileComponent , canActivate: [AfterLoginService] },
     {path: 'tooldata' , component: ToolDataComponent  },
+    {path: 'about' , component: AboutUsComponent},
+    {path: 'contact' , component: ContactComponent},
+    {path: 'rent' , component: RentComponent , canActivate: [AfterLoginService] },
     {path: '**', component: PageNotFoundComponent}
 ];
 

@@ -2,6 +2,7 @@ import {Component,  OnInit, } from '@angular/core';
 
 import {AuthService} from "../Services/auth.service";
 import {TokenService} from "../Services/token.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tool-data',
@@ -12,7 +13,8 @@ export class ToolDataComponent implements OnInit {
 
 
   constructor(private auth:AuthService,
-              private token :TokenService) { }
+              private token :TokenService,
+              private route : Router) { }
   public photoUrl;
 
   private id = this.auth.message +1;
@@ -39,7 +41,7 @@ export class ToolDataComponent implements OnInit {
   }
 
   showImage(){
-    this.auth.showSpecificPhoto(this.id).subscribe(
+    this.auth.showAll().subscribe(
         data => this.photoUrl = data,
         error => console.log(error)
     );
@@ -51,6 +53,16 @@ export class ToolDataComponent implements OnInit {
         error => console.log(error)
     );
   }
+
+  getRent(){
+    if (!this.token.loggedIn()){
+      this.route.navigateByUrl('/signin');
+      return;
+    }
+    this.route.navigateByUrl('/rent');
+
+  }
+
 
 }
 

@@ -39,8 +39,11 @@
                         <!--Title-->
                         <mdb-card-title>
                             <h4>{{photoUrl[i]['title']}}</h4>
+                            <h6>{{photoUrl[i]['type']}} $ per Hour</h6>
                         </mdb-card-title>
+                        <div>
                         <a (click)="removePhoto(photoUrl[i]['ph_name'])"  mdbBtn color="red" mdbWavesEffect>remove</a>
+                         </div>
                     </mdb-card-body>
                 </mdb-card>
             </div>

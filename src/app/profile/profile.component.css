@@ -43,3 +43,11 @@ label {
 #child{
     flex: 1 0 21%;
 }
+
+h4 ,h6{
+    display: inline;
+}
+
+h6{
+    float: right;
+}

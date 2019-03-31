@@ -6,7 +6,7 @@
       <mdb-card >
         <div class="view overlay waves-light"  mdbWavesEffect>
           <!-- Card img -->
-          <img style="height: 250px; width: 450px" src="http://127.0.0.1:8000/upload/{{photoUrl['ph_name']}}"  alt="Card image cap">
+          <img style="height: 250px; width: 450px" src="http://127.0.0.1:8000/upload/{{photoUrl[id]['ph_name']}}"  alt="Card image cap">
           <a>
             <div class="mask rgba-white-slight"  ></div>
           </a>
@@ -16,16 +16,16 @@
           <!--Title-->
           <mdb-card-title>
             <h4>{{photoUrl[id]['title']}}</h4>
-            <h6 style="color: darkmagenta">{{'by: '+photoUrl['name']}}</h6>
+            <h6>{{photoUrl[id]['type']}} $ per Hour</h6>
+            <h5 style="color: darkmagenta">{{'by: '+photoUrl[id]['name']}}</h5>
           </mdb-card-title>
           <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-          <a (click)="getRent()" mdbBtn color="primary" mdbWavesEffect>Credit Card</a>
-          <a (click)="getToolData()" style="float: right"  mdbBtn color="success" mdbWavesEffect>Cash on Delivery</a>
+          <a (click)="getRent()" mdbBtn color="primary" mdbWavesEffect>Rent</a>
         </mdb-card-body>
       </mdb-card>
 
       <div *ngIf="showCommentBox()" >
-        <textarea #comment [value]="commentText" style="margin-top: 15px;width: 400px" placeholder="write a comment.."></textarea>
+        <textarea #comment  style="margin-top: 15px;width: 400px" placeholder="write a comment.."></textarea>
         <button id="addco" (click)="addComment(comment.value)"   mdbBtn type="button" color="elegant" mdbWavesEffect>Submit</button>
       </div>
     </div>
@@ -34,7 +34,7 @@
 
 <div class="media" id="mid" *ngFor="let comments of comment;index as i" >
   <div class="media-body">
-    <h5 class="mt-0 font-weight-bold" style="color: #0040ff;font-size: 22px">{{comment[i]['user_name']}}</h5>
+    <h5 class="mt-0 font-weight-bold" style="color: #000000;font-size: 22px">{{comment[i]['user_name']}}</h5>
     <hr style="margin: -5px 0 0px 0">
     <p>{{comment[i]['comment']}}</p>
   </div>

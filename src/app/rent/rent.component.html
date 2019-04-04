@@ -1,3 +1,118 @@
-<p>
-  rent works!
-</p>
+<!-- Default form shipping address -->
+
+
+
+<form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Select a shipping address</p>
+
+    <!-- Name -->
+    <input type="text" id="fullName" class="form-control mb-4" placeholder="Full name:">
+
+    <!-- address -->
+    <input type="text" id="address1" class="form-control mb-4" placeholder="Address line: ">
+
+    <!-- City  -->
+    <input type="text " id="City" class="form-control mb-4" placeholder="City: ">
+
+    <!-- country  -->
+    <input type="text" id="country" class="form-control mb-4" placeholder="Country: ">
+
+    <!-- PhoneNumber  -->
+    <input type="tel" id="PhoneNumber" class="form-control mb-4" placeholder="PhoneNumber: ">
+
+
+
+    <!-- Send button -->
+    <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+            (click)="frame.show()" mdbWavesEffect>Credit Card</button>
+    <a  style="float: right" (click)="basicModal.show()" mdbBtn color="success" mdbWavesEffect>Cash on Delivery</a>
+
+</form>
+<!-- Default form shipping address -->
+
+<div class="container-fluid" id="containera">
+    <mdb-card >
+        <div class="view overlay waves-light"  mdbWavesEffect>
+            <!-- Card img -->
+            <img style="height: 250px; width: 450px" src="http://127.0.0.1:8000/upload/{{photoUrl[id]['ph_name']}}"  alt="Card image cap">
+            <a>
+                <div class="mask rgba-white-slight"  ></div>
+            </a>
+        </div>
+        <!--Card content-->
+        <mdb-card-body>
+            <!--Title-->
+            <mdb-card-title>
+                <h4>{{photoUrl[id]['title']}}</h4>
+                <h6>{{photoUrl[id]['type']}} $ per Hour</h6>
+                <h5 style="color: darkmagenta">{{'by: '+photoUrl[id]['name']}}</h5>
+            </mdb-card-title>
+
+        </mdb-card-body>
+    </mdb-card>
+
+
+</div>
+
+
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Credit Card Payment</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <input type="text" id="orangeForm-name" class="form-control validate"
+                           mdbInput>
+                    <label data-error="wrong" data-success="right" for="orangeForm-name">Name on Card</label>
+                </div>
+                <div class="md-form mb-5">
+                    <input type="email" id="orangeForm-email" class="form-control validate"
+                           mdbInput>
+                    <label data-error="wrong" data-success="right" for="orangeForm-email">Credit card number</label>
+                </div>
+
+                <div class="md-form mb-4">
+                    <input type="password" id="orangeForm-pass" class="form-control validate"
+                           mdbInput>
+                    <label data-error="wrong" data-success="right" for="orangeForm-pass">CVC CODE</label>
+                </div>
+                    <div class="md-form mb-4">
+                    <input type="text" id="orangeForm-pass1" class="form-control validate"
+                           mdbInput>
+                    <label data-error="wrong" data-success="right" for="orangeForm-pass1">EXPIRATION DATE</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button mdbBtn color="deep-orange" class="waves-light" mdbWavesEffect>CheckOut</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Thank You</h4>
+            </div>
+            <div class="modal-body">
+                We will deliver the tools as soon as possible.
+            </div>
+            <div class="modal-footer">
+                <button type="button" routerLink="/home" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+            </div>
+        </div>
+    </div>
+</div>

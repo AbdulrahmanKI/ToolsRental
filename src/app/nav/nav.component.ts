@@ -26,8 +26,14 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.logout.authStatus.subscribe(value => this.loggedIn = value);
     this.auth.fetch_data().subscribe(
-        data => this.username = data);
+        data => this.username = data['name']);
     console.log(this.loggedIn);
+  }
+
+  showName(){
+   this.auth.fetch_data().subscribe(
+        data => this.username =data['name']);
+   return this.username;
   }
 
 

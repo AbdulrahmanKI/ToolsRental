@@ -7,7 +7,7 @@
             <a routerLink="/about">About</a>
             <a routerLink="/contact">Contact us</a>
             <a class="login" routerLink="signin" *ngIf="!loggedIn">login</a>
-            <a class="login" routerLink="profile" *ngIf="loggedIn">{{username?.name}}</a>
+            <a class="login" routerLink="profile" *ngIf="loggedIn">{{username}}</a>
             <a class="login" href="#" (click)="logout1($event)" *ngIf="loggedIn">logout</a>
         </nav>
     </div>

@@ -1,0 +1,28 @@
+form{
+    width: 50%;
+
+
+}
+
+h4 ,h6{
+    display: inline;
+}
+
+h6{
+    float: right;
+}
+
+#containera ,form{
+
+    float: left;
+    margin-left: 15px;
+
+}
+
+
+#containera{
+    width: 400px;
+    margin: 25px 50px 0 50px;
+
+}
+

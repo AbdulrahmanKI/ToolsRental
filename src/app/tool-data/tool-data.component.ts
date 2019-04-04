@@ -17,7 +17,7 @@ export class ToolDataComponent implements OnInit {
               private route : Router) { }
   public photoUrl;
 
-  private id = this.auth.message +1;
+  private id = this.auth.message;
    public comment;
    private commentData = [];
 
